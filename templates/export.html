@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+    {% block style %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='Css/exportStyle.css') }}">
+    <title>Export</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <header>
+        <picture>
+            <source srcset="{{ url_for('static',filename='image/800EXPORT_2.jpg') }}" media="(max-width: 720px)" loading="lazy">
+            <img srcset="{{ url_for('static',filename='image/medium_EXPORT_2.jpg') }} 1600w,{{ url_for('static',filename='image/ultra_EXPORT_2.jpg') }} 3200w" src="{{ url_for('static',filename='image/medium_EXPORT_2.jpg') }}" class="img_slider active" alt="" loading="lazy">
+        </picture>
+    </header>
+    <div class="his">
+        <p> <strong>NALA INDUSTRIES SARL</strong> a été créé(e) en 2017 avec pour objectif d'exporter des produits à valeur ajoutée. Nous proposons à nos clients des produits tels que le beurre de karité, le beurre de cacao, l'huile de palmiste et le savon noir brut.
+        </p>
+    </div>
+    <div class="presentation">
+        <div class="cont_image"><img src="{{ url_for('static',filename='image/FIRST CAPITAL_60 (1).jpg') }}" alt="Chef" loading="lazy"></div>
+        <div class="contenu">
+            <h3>BEURRE DE CACAO</h3>
+            <p>Exportation de beurre de cacao brut selon vos spécificités</p>
+        </div>
+    </div>
+    <div class="reverse">
+        <div class="contenu">
+            <h3>SAVON NOIR OUEST-AFRICAIN </h3>
+            <p>Exportation de savon noir selon vos spécificités</p>
+        </div>
+        <div class="cont_image"><img src="{{ url_for('static',filename='image/14.jpg') }}" alt="emboche" loading="lazy"></div>
+    </div>
+    <div class="presentation">
+        <div class="cont_image"><img src="{{ url_for('static',filename='image/16.jpg') }}" alt="Chef" loading="lazy"></div>
+        <div class="contenu">
+            <h3>BEURRE DE KARITE</h3>
+            <p>Exportation de beurre de karité brut selon vos spécificités</p>
+        </div>
+    </div>
+    {% include 'footer.html'%}
+    {% endblock %}

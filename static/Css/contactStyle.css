@@ -1,0 +1,147 @@
+header img{
+    height: auto;
+    width: 100%;
+}
+.tel{
+    text-decoration: none;
+}
+.conteneur{
+    margin: 2rem 0;
+    min-height: 100vh;
+    display: flex;
+}
+.conteneur form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+.conteneur form p{
+    font-weight: bold;
+    color: #5FB963;
+}
+.conteneur form div{
+    margin: 1rem 0;
+    min-width: 50%;
+}
+.conteneur form div input,.conteneur form div textarea{
+    padding: .5rem;
+    width: 100%;
+    border-radius: 1rem;
+    resize: none;
+}
+.conteneur form .champ{
+    border: solid black 1px;
+    color: black;
+}
+.conteneur form h1{
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.content_socio{
+    display: flex;
+    justify-content: center;
+}
+.btn_envoie input{
+    background-color: #F8E21B;
+    border: none;
+    cursor: pointer;
+}
+.btn_envoie input{
+    color: white;
+}
+.btn_envoie input:hover{
+    background-color: #e6d11b;
+}
+.map{
+    display: flex;
+    align-items: center;
+    width: 45%;
+}
+nav a[data-ongle='contact']::before {
+    content: '';
+    transform: translateX(-50%);
+    position: absolute;
+    width: calc(100% + 20px);
+    height: 2px;
+    background-color: #F8E21B;
+    bottom: 0;
+    left: 50%;
+}
+@media screen and (min-width:1500px){
+    .conteneur form h3{
+        font-size: large;
+    }
+    .conteneur,.contact {
+        font-size: x-large;
+    }
+    .conteneur form h1{
+        font-size: xx-large;
+    }
+    .conteneur form div input::placeholder{
+        font-size: large;
+    }
+    .conteneur form div textarea::placeholder{
+        font-size: large;
+    }
+    .conteneur form div input{
+        font-size: large;
+        padding: 1rem;
+    }
+    .conteneur form div textarea{
+        font-size: large;
+        padding: 1.5rem 0.5rem;
+    }
+    .btn_envoie input{
+        border-radius: 2rem !important;
+    }
+    
+}
+@media screen and (min-width:2200px){
+    .content_socio a{
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    nav a[data-ongle='contact']::before{
+        height: 4px;
+    }
+    .conteneur form h3{
+        font-size: x-large;
+    }
+    .conteneur form div input::placeholder{
+        font-size: x-large;
+    }
+    .conteneur form div textarea::placeholder{
+        font-size: x-large;
+    }
+    .conteneur,.contact {
+        font-size: xx-large;
+    }
+    .conteneur form h1{
+        font-size: 2.5rem;
+    }
+    .conteneur form div input{
+        padding: 1rem;
+    }
+}
+@media screen and (max-width:1060px){
+    .conteneur{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .conteneur form{
+        width: 100%;
+    }
+    .conteneur .map{
+        width: 95%;
+        justify-content: center;
+        margin: 1.5rem 0;
+    }
+} 

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+    {% block style %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='Css/entreprieStyle.css') }}">
+    <title>Notre Entreprie</title>
+    {% endblock %}
+    {% block content%}
+    <body>
+        <header>
+            <picture>
+                <source srcset="{{ url_for('static',filename='image/800ACCEUIL_2.jpg') }}" media="(max-width: 720px)" loading="lazy">
+                <img srcset="{{ url_for('static',filename='image/medium_ACCEUIL_2.jpg') }} 1600w,{{ url_for('static',filename='image/ultra ACCEUIL (2)-1.jpg') }} 3200w" src="{{ url_for('static',filename='image/ultra ACCEUIL (2)-1.jpg') }}" alt="" class="img_slider active" loading="lazy">
+            </picture>
+            <picture>
+                <source srcset="{{ url_for('static',filename='image/800NOTRE_ENTREPRISE_2.jpg') }}" media="(max-width: 720px)" loading="lazy">
+                <img srcset="{{ url_for('static',filename='image/medium_NOTRE_ENTREPRISE_2.jpg') }} 1600w,{{ url_for('static',filename='image/utra_NOTRE_ENTREPRISE_2.jpg') }} 3200w" src="{{ url_for('static',filename='image/utra_NOTRE_ENTREPRISE_2.jpg') }}" alt="" class="img_slider" loading="lazy">
+            </picture>
+            <picture>
+                <source srcset="{{ url_for('static',filename='image/800NOTRE_ENTREPRISE_3.jpg') }}" media="(max-width: 720px)" loading="lazy">
+                <img srcset="{{ url_for('static',filename='image/medium_NOTRE_ENTREPRISE_3.jpg') }} 1600w,{{ url_for('static',filename='image/ultra_NOTRE_ENTREPRISE_3.jpg') }} 3200w" src="{{ url_for('static',filename='image/ultra_NOTRE_ENTREPRISE_3.jpg') }}" alt="" class="img_slider" loading="lazy">
+            </picture>
+            <div class="suivant">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="precedent">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+        </header>
+        <div class="his">
+            <h2>HISTORIQUE</h2>
+            <p><strong>NALA INDUSTRIES SARL</strong> est une entreprise dirigée par une ivoirienne. Créée en 2017, nous avons pour objectif de fabriquer et commercialiser des produits naturels issus de la biodiversité africaine. <br>
+                Nous entamons cette belle aventure avec le lancement de notre première marque <strong>OYEMI Savon Noir Doux</strong>. La première marque ivoirienne à repositionner le savon noir traditionnel au travers d'une formule enrichie aux extraits de plantes (aloe, cacao, citron, miel et moringa) 
+            </p>
+        </div>
+        <div class="obectif">
+            <h2>NOTRE OBJECTIF</h2>
+            <h3>Fabriquer et commercialiser des produits ivoiriens à valeur ajoutée. </h3>
+        </div>
+        <div class="vision">
+            <h2>NOTRE VISION</h2>
+            <p>Nous avons pour ambition de développer une entreprise pérenne et multi-marques. <br>
+                Notre ambition est de figurer parmi les meilleures entreprises ivoiriennes en termes:
+            </p>
+            <ul>
+                <li>de gouvernance,</li>
+                <li>de gestion d'entreprise et</li>
+                <li>de marques reconnues et appréciées tant au plan national qu'international</li>
+            </ul> 
+        </div>
+        <div class="vision">
+            <h2>NOS VALEURS</h2>
+            <p><strong>RESPECT</strong>: nous témoignons d'un grand respect pour nos collaborateurs, les consomateurs, l'environnement, dans nos paroles et nos actes. <br>
+                <strong>ENGAGEMENT</strong>: nous avons une vision à long terme et relevons les défis pour des resultats soutenus. <br>
+                <strong>COOPERATION</strong>: nous privilégions le partenariat dans un esprit de responsabilisation et de réciprocité. <br>
+                <strong>AUDACE</strong>: nous favorisons l'esprit d'entreprise, d'innovation et osons prendre des risques. <br>
+                <strong>PASSION</strong>: nous inspirons nos collaborateurs et montrons l'exemple, nous partagerons notre enthousiasme et notre fierté.
+            </p>
+        </div>
+        <div class="video"><iframe width="640" height="360" src="https://www.youtube.com/embed/-OP0dxI2v90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        {% include 'footer.html'%}
+        {% endblock %}
+        {% block script %}
+        <script src="{{ url_for('static',filename='JS/scriptSlider.js') }}"></script>
+        {% endblock %}

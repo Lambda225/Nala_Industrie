@@ -1,0 +1,277 @@
+header{
+    position: relative;
+    aspect-ratio: 2.7;
+}
+header img{
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+header img.active{
+    opacity: 1;
+}
+.suivant, .precedent{
+    cursor: pointer;
+    color: #F8E21B;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.suivant{
+    right: 1rem;
+}
+.precedent{
+    left: 1rem;
+}
+.conteneur{
+    margin: 100px 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.conteneur >div:nth-child(2){
+    width: 40%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+.conteneur >div:nth-child(2) img{
+    display: block;
+    width: 100%;
+}
+.info .valeurs{
+    margin: 15px 0;
+}
+.contener{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.presentation,.reverse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    margin-bottom: 50px;  
+    margin-top: 7rem;  
+}
+.presentation > div,.reverse >div{
+    width: 30%;
+    display: flex;
+    margin: 0 4rem  ;
+    flex-direction: column;
+    justify-content: center;
+}
+.presentation > div img, .reverse > div img{
+    width: 100%;
+    display: block;
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+    padding: .6rem;
+    background-color: #F8E21B;
+    border-radius: 1.5rem;
+    transition: all .3s ease-in;
+}
+.presentation p a:hover,.reverse p a:hover{
+    letter-spacing: 2px;
+    transition: all .3s ease-in;
+}
+section h3{
+    padding-left: 30px;
+    position: relative;
+}
+section h3::before{
+    content: '';
+    position: absolute;
+    transform: translateX(-50%);
+    left: 15px;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #F8E21B;
+}
+article{
+    margin: 50px;
+    display:grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+}
+.gallery a{
+    display: block;
+    width: 300px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+.gallery a img{
+    display: block;
+    width: 100%;
+}
+.gallery a div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    top: 0;
+    background: linear-gradient(180deg, hsla(123, 39%, 55%, 0.3) 20%, #F8E21B 100%);
+    opacity: 0;
+    transition: .2s;
+}
+.gallery a div:hover{
+    opacity: 1;
+}
+.gallery a div > h2{
+    transform: translateY(30px);
+    transition: .2s;
+}
+.gallery a div:hover > h2{
+    transform: translateY(0);
+}
+nav a[data-ongle='marque']::before{
+    content: '';
+    transform: translateX(-50%);
+    position: absolute;
+    width: calc(100% + 20px);
+    height: 2px;
+    background-color: #F8E21B;
+    bottom: 0;   
+    left: 50%;
+}
+.post{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.post div{
+    width: 326px;
+    margin: 0 20px;
+}
+@media screen and (min-width:1500px){
+    .presentation,.reverse{
+        font-size: x-large;
+    }
+    section h3{
+        font-size: xx-large;
+    }
+    section h3::before{
+        width: 5px;
+    }
+    .precedent ,.suivant{
+        font-size: 4rem;
+    }
+    section h3{
+        font-size: 2.5rem;
+    }
+    .post div{
+        width: 500px;
+    }
+}
+@media screen and (min-width:2200px){
+    .presentation,.reverse{
+        font-size: xx-large;
+    }
+    nav a[data-ongle='marque']::before{
+        height: 4px;
+    }
+    .presentation p a, .reverse p a{
+        padding: 1rem;
+        border-radius: 2.5rem;
+    }
+    .precedent ,.suivant{
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width:1150px){
+    .presentation > div, .reverse > div{
+        width: 40%;
+    }
+    article{
+        grid-template-columns: 300px 300px 300px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    article{
+        grid-template-columns: 300px 300px;
+    }
+}
+@media screen and (max-width:860) {
+    .presentation > div{
+        width: 55%;
+    }
+}
+@media screen and (max-width:795px) {
+    .suivant, .precedent{
+        font-size: 2rem;
+    }
+    .conteneur{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .conteneur >div:nth-child(1){
+        width: 80%;
+    }
+    .conteneur >div:nth-child(2){
+        margin: 0;
+        width: 90%;
+    }
+    .presentation{
+        justify-content: center;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .presentation .contenu, .reverse .contenu{
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    .contenu p{
+        text-align: justify;
+    }
+    .contenu a{
+        text-align: center;
+    }
+    .presentation > div,.reverse > div{
+        width: 50%;
+    }
+    .reverse{
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+@media screen and (max-width:720px) {
+    header{
+        aspect-ratio: 1.8;
+    }
+}
+@media screen and (max-width:795px){
+    article{
+        grid-template-columns: 300px;
+    }
+}
+@media screen and (max-width:450px) {
+    .presentation > div,.reverse > div{
+        width: 70%;
+    }
+}

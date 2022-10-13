@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+    {% block style %}
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='Css/homeStyle.css') }}" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="barnav">
+        <ul>
+            <li><a href="#Intro"> <span>Intro</span> </a></li>
+            <li><a href="#Partie1"> <span>Partie 1</span> </a></li>
+            <li><a href="#partie2"> <span>Partie 2</span>  </a></li>
+        </ul>
+    </div>
+    <div class="section" id="Intro">
+        <p>Entreprise leader dans la valorisation des sous-produits agricoles</p>
+    </div>
+    <div class="section" id="Partie1">
+        <p>Les valeurs que nous partageons sont au coeur de notre motivation à développer des produits de qualité supérieure</p>
+    </div>
+    <div class="bas" id="partie2">
+        <p>Toutes nos gammes sont composées d'ingrédients minutieusement sélectionnés et développés par des biochimistes hautement qualifiés</p>
+    </div>
+    {% include 'footer.html'%}
+    {% endblock %}
+    {% block script %}
+    <script src="{{ url_for('static',filename='JS/homeScript.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

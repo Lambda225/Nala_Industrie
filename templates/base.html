@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='Css/baseStyle.css') }}">
+    <link rel="icon" type="image/png" sizes="70x70" href="{{ url_for('static',filename='image/icone.png') }}">
+    {% block style %}{% endblock %}
+</head>
+<body>
+    <div class="couvrir"></div>
+    <div class="navBar">
+        <ul>
+            <li><i class="fa-solid fa-xmark"></i></li>
+            <li><a href="/">ACCEUIL</a></li>
+            <li class="lien_survol"><a href="/entreprise">NOTRE ENTREPRISE</a>
+                <ul class="sous_menu">
+                    <li><a href="#">VISION</a></li>
+                    <li><a href="#">MISSION</a></li>
+                </ul>
+            </li>
+            <li><a href="/marque">NOS MARQUES</a></li>
+            <li><a href="/vision">EXPORT</a></li>
+            <li><a href="/contact">NOS CONTACTS</a></li>
+        </ul>
+    </div>
+    <nav>
+        <div><div class="menu"><i class="fa-solid fa-bars"></i></div><div class="image"><img src="{{ url_for('static',filename='image/Artboard 2.png') }}" loading="lazy" class="desktop" alt="logo"></div></div>
+        <ul>
+            <li class="active"><a href="/" data-ongle="home">ACCEUIL</a></li>
+            <li><a href="/entreprise" data-ongle="compagnie">NOTRE ENTREPRISE</a></li>
+            <li><a href="/marque" data-ongle="marque">NOS MARQUES</a></li>
+            <li><a href="/vision" data-ongle="vision">EXPORT</a></li>
+            <li><a href="/contact" data-ongle="contact">NOS CONTACTS</a></li>
+        </ul> 
+    </nav>
+    {% block content %}{% endblock %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static',filename='JS/navresposive.js') }}"></script>
+    {% block script %}{% endblock %}
+</body>
+</html>

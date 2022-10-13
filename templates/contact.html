@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static',filename='Css/contactStyle.css') }}">
+<title>Contact</title>
+{% endblock %}
+
+{% block content %}
+    <header>
+        <picture>
+            <source srcset="{{ url_for('static',filename='image/800contact-1.jpg') }}" media="(max-width: 720px)" loading="lazy">
+            <img srcset="{{ url_for('static',filename='image/medium_Contact_1.jpg') }} 1600w,{{ url_for('static',filename='image/ultra_Contact_1.jpg') }} 3200w" src="{{ url_for('static',filename='image/ultra_Contact_1.jpg') }}" alt="" loading="lazy">
+        </picture>
+    </header>
+    <div class="conteneur">
+        <form action="" method="post">
+            {{form.hidden_tag()}}
+            <h1>Formulaire De Contact</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div>{{ form.nom(placeholder="Nom",class="champ") }}</div>
+            <div>{{ form.mail( placeholder="Mail",class="champ") }}</div>
+            <div>{{ form.message(cols="20",class="champ",placeholder='Message') }}</div>
+            <div class="btn_envoie">{{ form.submit }}</div>
+            {% for erro in form.nom.erros %}
+                <p>{{erro}}</p>
+            {% endfor %}
+            {% for erro in form.mail.erros %}
+                <p>{{erro}}</p>
+            {% endfor %}
+            {% for erro in form.message.erros %}
+                <p>{{erro}}</p>
+            {% endfor %}
+        </form>
+        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.5037349140207!2d-4.003150285908843!3d5.339791537272848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eb7631e33763%3A0xa7abba807373e8a7!2sBoutique%20OYEMI%20-%20Savon%20Noir%20Doux!5e0!3m2!1sfr!2sci!4v1648042327379!5m2!1sfr!2sci" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+    </div>
+    {% include 'footer.html'%}
+{% endblock %}
